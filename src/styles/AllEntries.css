@@ -1,0 +1,25 @@
+th, td {
+    max-width: 200px;
+    height: 1rem;
+    padding: var(--padding);
+    border: 1px solid;
+}
+
+.entries-table {
+    padding: 1rem;
+}
+
+.entries-table-title {
+    margin: 1rem;
+}
+
+.entries-table h1 {
+    margin: 0;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.remove-button {
+    background: none;
+    color: #9d0208;
+}
