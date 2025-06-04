@@ -17,7 +17,7 @@ function App() {
     <>
       {user ? (
         <>
-          <StudyGuide />
+          <StudyGuide user={user} />
         </>
       ) : (
         <>
