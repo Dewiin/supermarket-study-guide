@@ -53,10 +53,15 @@ export function StudyGuide( {user} ) {
 
         <section className='add-content'>
             <form className="add-product" onSubmit={e => handleAdd(e)}>
-                <input type='text' placeholder='4020' value={addKey} onChange={(e) => setAddKey(e.target.value)} maxLength={10} required></input>
-                <input type='text' placeholder='Golden Apple' value={addValue} onChange={(e) => setAddValue(e.target.value)} maxLength={25} required></input>
+                <input type='text' placeholder='4020' value={addKey} onChange={(e) => setAddKey(e.target.value)} maxLength={100} required></input>
+                <textarea placeholder='Golden Apple' value={addValue} onChange={(e) => setAddValue(e.target.value)} maxLength={5000} required></textarea>
                 <button type="submit">+</button>
-                <p>{recentlyAdded ? `"${recentlyAdded}" has been added to the database.` : ""}</p>
+                <p>{recentlyAdded ? 
+                    recentlyAdded.length > 50 ? 
+                    (`"${recentlyAdded.substring(0, 50)}..." has been added to the database.`) 
+                    : (`${recentlyAdded} has been added to the database.`)
+                    : ""}
+                </p>
             </form>
         </section>
 

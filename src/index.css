@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --padding: 0.6em 1.2em;
+  --input-background: #2b2a33;
+  --flashcard-background: #0C0A07;
 }
 
 body {
@@ -38,17 +40,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

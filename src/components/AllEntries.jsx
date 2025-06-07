@@ -2,22 +2,23 @@ import { useState, useEffect } from "react"
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore"
 import { db } from "../../firebaseConfig"
 import { Link } from "react-router-dom"
+import { FlashCard } from "./FlashCard"
 import "../styles/AllEntries.css"
 
 export function AllEntries( {user} ) {
     const [loading, setLoading] = useState(true);
     const [entries, setEntries] = useState([]);
 
-    async function handleDelete(key) {
-        try {
-            const docRef = doc(db, 'users', user.uid, 'productCode', key);
-            await deleteDoc(docRef);
-            setEntries((prev) => prev.filter(entry => entry.key !== key));
-        }
-        catch (error) {
-            console.error("Error deleting document:", error);
-        }
-    }
+    // async function handleDelete(key) {
+    //     try {
+    //         const docRef = doc(db, 'users', user.uid, 'productCode', key);
+    //         await deleteDoc(docRef);
+    //         setEntries((prev) => prev.filter(entry => entry.key !== key));
+    //     }
+    //     catch (error) {
+    //         console.error("Error deleting document:", error);
+    //     }
+    // }
 
     async function fetchData() {
         try {
@@ -47,35 +48,17 @@ export function AllEntries( {user} ) {
             {loading ? (
                 <h1>Loading...</h1>
             ) : (entries.length > 0 ? (
-                <>
-                <div className="entries-table">
+                <section className="entries">
                     <div className="entries-table-title">
                         <h1>All Entries</h1>
                         <Link to='/'>Home</Link>
                     </div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Product Code</th>
-                            <th>Product Item</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {entries.map(({ key, value }) => (
-                            <>
-                                <tr key={key}>
-                                    <td>{key}</td>
-                                    <td>{value}</td>
-                                    <td>
-                                        <button onClick={() => handleDelete(key)} className="remove-button">✖</button>
-                                    </td>
-                                </tr>
-                            </>
+                    <div className="entries-table">
+                        {entries.map(({key, value}) => (
+                            <FlashCard productCode={key} value={value}></FlashCard>
                         ))}
-                        </tbody>
-                    </table>
-                </div>
-                </>
+                    </div>
+                </section>
             ) : (
                 <div className="entries-table-title">
                     <h1>No Entries</h1>

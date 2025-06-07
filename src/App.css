@@ -5,7 +5,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 input {
@@ -36,7 +36,28 @@ input {
   margin: 1rem auto;
 }
 
+.add-product > textarea {
+  resize: none;
+  padding: var(--padding);
+  width: 15rem;
+  height: 10rem;
+  overflow-wrap: anywhere;
+  overflow: scroll;
+}
+
+.add-product > textarea::-webkit-scrollbar {
+  display: none;
+}
+
 .add-product > button {
   display: block;
   margin: 1rem auto;
+}
+
+footer {
+  margin: 2rem 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
