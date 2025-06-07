@@ -1,69 +1,87 @@
 .entries {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .entries-table-title {
-    margin: 3rem auto;
-    display: block;
+	margin: 3rem auto;
+	display: block;
 }
 
 .entries-table-title > h1 {
-    margin: 0;
+	margin: 0;
 }
 
 .entries-table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
 }
 
 .flash-card {
-    padding: 1rem;
-    width: 15rem;
-    height: 10rem;
-    position: relative;
-    border-radius: 20px;
-    transition: transform 700ms;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+	padding: 1rem;
+	width: 15rem;
+	height: 10rem;
+	position: relative;
+	border-radius: 20px;
+	transition: transform 700ms;
+	transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	cursor: default;
 }
 
-.flash-card .card-front {
-    border-radius: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--flashcard-background);
-    z-index: 2;
+.flash-card > svg {
+	margin: 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	cursor: pointer;
 }
 
-.flash-card .card-back {
-    border-radius: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    background-color: var(--flashcard-background);
-    transform: rotateY(180deg);
+.card-front,
+.card-back {
+	border-radius: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--flashcard-background);
+}
+
+.card-front {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.card-front > p {
+	font-size: 1.5rem;
+}
+
+.card-back {
+	overflow: scroll;
+	transform: rotateY(180deg);
 }
 
 .flash-card .card-back::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .flash-card.active {
-    transform: perspective(400px) rotateY(180deg);
+	transform: perspective(400px) rotateY(180deg);
 }
 
 .card-text {
-    overflow-wrap: anywhere;
-    margin: 1rem;
+	overflow-wrap: anywhere;
+	margin: 1rem;
 }

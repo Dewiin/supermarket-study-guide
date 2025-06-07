@@ -1,63 +1,63 @@
 #root {
-  max-width: 1920px;
-  height: 100vh;
-  max-height: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: start;
+	max-width: 1920px;
+	height: 100vh;
+	max-height: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: start;
 }
 
 input {
-  padding: var(--padding);
+	padding: var(--padding);
 }
 
 /* container */
 .content {
-  height: 80%;
-  max-height: 1080px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	height: 80%;
+	max-height: 1080px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 /* search-content */
 .search-content > h1 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .search-bar > input {
-  margin: 0 1rem;
+	margin: 0 1rem;
 }
 
 /* add-content */
 .add-product > input {
-  display: block;
-  margin: 1rem auto;
+	display: block;
+	margin: 1rem auto;
 }
 
 .add-product > textarea {
-  resize: none;
-  padding: var(--padding);
-  width: 15rem;
-  height: 10rem;
-  overflow-wrap: anywhere;
-  overflow: scroll;
+	resize: none;
+	padding: var(--padding);
+	width: 15rem;
+	height: 10rem;
+	overflow-wrap: anywhere;
+	overflow: scroll;
 }
 
 .add-product > textarea::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .add-product > button {
-  display: block;
-  margin: 1rem auto;
+	display: block;
+	margin: 1rem auto;
 }
 
 footer {
-  margin: 2rem 0;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+	margin: 2rem 0;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
